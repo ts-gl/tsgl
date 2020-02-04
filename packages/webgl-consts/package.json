@@ -1,0 +1,12 @@
+{
+  "name": "@tsgl/webgl-consts",
+  "version": "0.0.2",
+  "description": "WebGL 1.0 Constants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["webgl consts", "webgl-consts", "webgl constants", "webgl-constants", "gl consts", "gl-consts", "gl constants", "gl-constants", "consts", "constants", "tsgl", "webgl", "typescript"],
+  "author": "vtxf",
+  "license": "MIT"
+}
