@@ -70,78 +70,154 @@ export enum StencilOperation {
     DECR_WRAP = WebGLConsts.DECR_WRAP,
 };
 
-export const defaultState = {
-    frontFace : WindingOrder.CCW,
-    cull : {
-        enabled : false,
-        face : CullFace.BACK
+export interface State {
+    frontFace: WindingOrder,
+    cull: {
+        enabled: boolean,
+        face: CullFace,
     },
-    lineWidth : 1,
-    polygonOffset : {
-        enabled : false,
-        factor : 0,
-        units : 0
+    lineWidth: number,
+    polygonOffset: {
+        enabled: boolean,
+        factor: number,
+        units: number,
     },
-    scissorTest : {
-        enabled : false,
-        rectangle : {
-            x : 0,
-            y : 0,
-            width : 0,
-            height : 0
+    scissorTest: {
+        enabled: boolean,
+        rectangle: {
+            x: number,
+            y: number,
+            width: number,
+            height: number,
         }
     },
-    depthRange : {
-        near : 0,
-        far : 1
+    depthRange: {
+        near: number,
+        far: number,
     },
-    depthTest : {
-        enabled : false,
-        func : DepthFunction.LESS
-        },
-    colorMask : {
-        red : true,
-        green : true,
-        blue : true,
-        alpha : true
+    depthTest: {
+        enabled: boolean,
+        func: DepthFunction,
     },
-    depthMask : true,
-    stencilMask : ~0,
-    blending : {
-        enabled : false,
-        color : {
-            red : 0.0,
-            green : 0.0,
-            blue : 0.0,
-            alpha : 0.0
-        },
-        equationRgb : BlendEquation.FUNC_ADD,
-        equationAlpha : BlendEquation.FUNC_ADD,
-        functionSourceRgb : BlendFunction.ONE,
-        functionSourceAlpha : BlendFunction.ONE,
-        functionDestinationRgb : BlendFunction.ZERO,
-        functionDestinationAlpha : BlendFunction.ZERO
+    colorMask: {
+        red: true,
+        green: true,
+        blue: true,
+        alpha: true
     },
-    stencilTest : {
-        enabled : false,
-        frontFunction : StencilFunction.ALWAYS,
-        backFunction : StencilFunction.ALWAYS,
-        reference : 0,
-        mask : ~0,
-        frontOperation : {
-            fail : StencilOperation.KEEP,
-            zFail : StencilOperation.KEEP,
-            zPass : StencilOperation.KEEP
+    depthMask: true,
+    stencilMask: number,
+    blending: {
+        enabled: boolean,
+        color: {
+            red: number,
+            green: number,
+            blue: number,
+            alpha: number
         },
-        backOperation : {
-            fail : StencilOperation.KEEP,
-            zFail : StencilOperation.KEEP,
-            zPass : StencilOperation.KEEP
+        equationRgb: BlendEquation,
+        equationAlpha: BlendEquation,
+        functionSourceRgb: BlendFunction,
+        functionSourceAlpha: BlendFunction,
+        functionDestinationRgb: BlendFunction,
+        functionDestinationAlpha: BlendFunction
+    },
+    stencilTest: {
+        enabled: boolean,
+        frontFunction: StencilFunction,
+        backFunction: StencilFunction,
+        reference: number,
+        mask: number,
+        frontOperation: {
+            fail: StencilOperation,
+            zFail: StencilOperation,
+            zPass: StencilOperation
+        },
+        backOperation: {
+            fail: StencilOperation,
+            zFail: StencilOperation,
+            zPass: StencilOperation
         }
     },
-    sampleCoverage : {
-        enabled : false,
-        value : 1.0,
-        invert : false
+    sampleCoverage: {
+        enabled: boolean,
+        value: number,
+        invert: boolean
+    }
+};
+
+export const defaultState: State = {
+    frontFace: WindingOrder.CCW,
+    cull: {
+        enabled: false,
+        face: CullFace.BACK
+    },
+    lineWidth: 1,
+    polygonOffset: {
+        enabled: false,
+        factor: 0,
+        units: 0
+    },
+    scissorTest: {
+        enabled: false,
+        rectangle: {
+            x: 0,
+            y: 0,
+            width: 0,
+            height: 0
+        }
+    },
+    depthRange: {
+        near: 0,
+        far: 1
+    },
+    depthTest: {
+        enabled: false,
+        func: DepthFunction.LESS
+    },
+    colorMask: {
+        red: true,
+        green: true,
+        blue: true,
+        alpha: true
+    },
+    depthMask: true,
+    stencilMask: ~0,
+    blending: {
+        enabled: false,
+        color: {
+            red: 0.0,
+            green: 0.0,
+            blue: 0.0,
+            alpha: 0.0
+        },
+        equationRgb: BlendEquation.FUNC_ADD,
+        equationAlpha: BlendEquation.FUNC_ADD,
+        functionSourceRgb: BlendFunction.ONE,
+        functionSourceAlpha: BlendFunction.ONE,
+        functionDestinationRgb: BlendFunction.ZERO,
+        functionDestinationAlpha: BlendFunction.ZERO
+    },
+    stencilTest: {
+        enabled: false,
+        frontFunction: StencilFunction.ALWAYS,
+        backFunction: StencilFunction.ALWAYS,
+        reference: 0,
+        mask: ~0,
+        frontOperation: {
+            fail: StencilOperation.KEEP,
+            zFail: StencilOperation.KEEP,
+            zPass: StencilOperation.KEEP
+        },
+        backOperation: {
+            fail: StencilOperation.KEEP,
+            zFail: StencilOperation.KEEP,
+            zPass: StencilOperation.KEEP
+        }
+    },
+    sampleCoverage: {
+        enabled: false,
+        value: 1.0,
+        invert: false
     }
 };
