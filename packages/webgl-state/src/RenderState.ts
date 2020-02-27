@@ -10,13 +10,12 @@ import { Viewport } from './states/Viewport';
 export type GLParameters = Blending & Color & Depth & FaceCulling & Misc & Scissor & Stencil & Viewport;
 
 export interface RenderState {
-    blending: Blending,
-    color: Color,
-    depth: Depth,
-    faceCulling: FaceCulling,
-    misc: Misc,
-    scissor: Scissor,
-    stencil: Stencil,
-    viewport: Viewport,
+    blending?: Blending,
+    color?: Color,
+    depth?: Depth,
+    faceCulling?: FaceCulling,
+    misc?: Misc,
+    scissor?: Scissor,
+    stencil?: Stencil,
+    viewport?: Viewport,
 };
-
