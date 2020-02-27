@@ -6,7 +6,13 @@ export enum CullFace {
     FRONT_AND_BACK = WebGLConsts.FRONT_AND_BACK,
 };
 
+export enum WindingOrder {
+    CW = WebGLConsts.CW,
+    CCW = WebGLConsts.CCW,
+};
+
 export interface FaceCulling {
-    cullFace?: boolean,
-    frontFace?: CullFace,
+    cull?: boolean,
+    cullFace?: CullFace,
+    frontFace?: WindingOrder,
 };

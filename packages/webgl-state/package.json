@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@luma.gl/gltools": "^8.0.5",
-    "@tsgl/webgl-consts": "0.0.2"
+    "@tsgl/webgl-consts": "0.0.2",
+    "@tsgl/webgl2-consts": "0.0.1"
   }
 }
